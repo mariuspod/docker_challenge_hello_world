@@ -3,13 +3,17 @@ This is a repository with the source code for a [tiny docker image that prints "
 So far the image strips down to 169 Bytes :)
 ```bash
 HypriotOS/armv6: pirate@hrrr in ~
-$ docker run hello_arm
+$ docker run mpod/docker_challenge_hello_world:armhf
 Hello Docker World!
 HypriotOS/armv6: pirate@hrrr in ~
-$ docker images hello_arm
+$ docker images mpod/docker_challenge_hello_world
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-hello_arm           latest              8b612212faf3        7 hours ago         169 B
+hello_arm           armhf               8b612212faf3        7 hours ago         169 B
 ```
+
+## Run the image
+
+
 ## Building
 This image has to be built in two steps. First we need to assemble the .asm file to a working binary for ARM with the [fasmarm assembler](https://arm.flatassembler.net/). Unfortunately, this assembler does not run on ARM so we have to do assemble the code on a x86 machine. Once we have the binary built we can copy it over to an ARM machine and build the Docker image there.
 
